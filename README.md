@@ -8,7 +8,8 @@ The objective of this case is to perform forecast on German retail sales from Ap
 We performed decomposition on the data series from Jan 2002 - Mar 2020 to check the components. Figure 1 shows a prominent seasonal component after decomposition. The consistent peaks and troughs at regular time intervals confirming presence of seasonality in the data. However, the trend remains almost constant and rises from 2015 to 2020.
 
 
-2. **Forecasting method selection**
+2. **Forecasting method selection** : 
+
 Since we found seasonality in our data, we focus on methods which take seasonality in consideration. We did not consider Simple Exponential Smoothing (SES) and Linear Exponential Smoothing (LES) because the produced forecasts fail to predict the seasonality. Therefore, we proceeded with the following forecasting methods:
 _* Seasonal Naïve (as benchmark)
 _* Holt-Winters Additive and Multiplicative (with and without trend)
@@ -21,7 +22,8 @@ Among the three Information Criteria measures, we chose AICc for performance mea
 The residuals of ARIMA (2,1,2) (0,1,1) show bell-shaped histogram which represents normally distributed data. We see very few spikes (crossing the blue line in ACF plot) indicating additional non-seasonal terms could be added in the model (see Figure A2 in Appendix). But this could make the model complex which we do not prefer within our current scope of study.
  
 
-3. **Comparison of performance measures**
+3. **Comparison of performance measures** :
+
 We chose seasonal naïve as the benchmark method since the data has seasonality. We used hold-out sample to perform rolling forecasting error and found the best-performed model by considering lowest root mean squared error (RMSE).
  - Forecasting Method
 * RMSE
@@ -32,10 +34,12 @@ We chose seasonal naïve as the benchmark method since the data has seasonality
 
                     Among all the methods, ARIMA (2,1,2) (0,1,1) performs better in terms of lowest RMSE.
  
-4. **Using different estimation samples to check forecast performance**
+4. **Using different estimation samples to check forecast performance** :
+
 We used different estimation sample size in ARIMA (2,1,2) (0,1,1) model and found the results tabulated below:
 
-5. **Conclusion**
+5. **Conclusion** :
+
 Based on the above results, we found ARIMA (2,1,2) (0,1,1) model to be the best-fit for the provided data. We consider this result a reasonable one because adding more terms to the ARIMA model would make it complex one which is not preferred.
  Estimation Sample
   Prediction Interval
